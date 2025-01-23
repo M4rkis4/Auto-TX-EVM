@@ -111,7 +111,7 @@ const main = async () => {
     for (let i = 1; i <= transactionCount; i++) {
       for (const receiverAddress of recipientAddresses) {
         console.log(
-          colors.white(`\n🆕 Sending transaction ${i} to: ${receiverAddress}`)
+          colors.white(`\n🆕 Mengirim transaksi ${i} to: ${receiverAddress}`)
         );
 
         const amountToSend = ethers.parseUnits(
@@ -149,7 +149,7 @@ const main = async () => {
           continue;
         }
 
-        console.log(colors.white(`🔗 Transaction ${i}:`));
+        console.log(colors.white(`🔗 Transaksi ${i}:`));
         console.log(colors.white(`  Hash: ${colors.green(tx.hash)}`));
         console.log(colors.white(`  From: ${colors.green(senderAddress)}`));
         console.log(colors.white(`  To: ${colors.green(receiverAddress)}`));
