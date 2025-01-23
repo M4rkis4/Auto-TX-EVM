@@ -6,14 +6,14 @@ function loadChains(networkType) {
   const filePath = `./chains/${networkType}.json`;
 
   if (!fs.existsSync(filePath)) {
-    console.log(colors.red(`🚨 Error: The file ${filePath} does not exist.`));
+    console.log(colors.red(`🚨 Kesalahan: untuk file ${filePath} tidak ada.`));
     process.exit(1);
   }
 
   const chains = JSON.parse(fs.readFileSync(filePath, 'utf8'));
 
   if (chains.length === 0) {
-    console.log(colors.red(`🚨 Error: No chains found in ${filePath}.`));
+    console.log(colors.red(`🚨 Kesalahan: Tidak ada Chain yang ditemukan ${filePath}.`));
     process.exit(1);
   }
 
@@ -38,7 +38,7 @@ function selectNetworkType() {
 
 function selectChain(chains) {
   console.log('');
-  console.log(colors.cyan('🌐 Select a blockchain network:'));
+  console.log(colors.cyan('🌐 Pilih jaringan blockchain:'));
 
   const chainNames = chains.map((chain) => {
     return `${chain.name}`;
@@ -46,11 +46,11 @@ function selectChain(chains) {
 
   const selectedIndex = readlineSync.keyInSelect(
     chainNames,
-    'Which chain do you want to use?'
+    'Chain mana yang ingin Kamu gunakan?'
   );
 
   if (selectedIndex === -1) {
-    console.log(colors.red('🚨 No chain selected. Exiting...'));
+    console.log(colors.red('🚨 Tidak ada Chain yang dipilih. Keluar...'));
     process.exit(1);
   }
 
