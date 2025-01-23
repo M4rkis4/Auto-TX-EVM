@@ -193,13 +193,13 @@ const main = async () => {
           } else {
             console.log(
               colors.yellow(
-                '⏳ Transaksi tertunda setelah beberapa kali percobaan ulang.'
+                '⏳ Transaksi Tertunda'
               )
             );
           }
         } catch (error) {
           console.log(
-            colors.red(`❌ Kesalahan saat memeriksa status transaksi: ${error.message}`)
+            colors.red(`❌ Gagal memeriksa status transaksi: ${error.message}`)
           );
         }
 
