@@ -22,7 +22,7 @@ async function retry(fn, maxRetries = MAX_RETRIES, delay = RETRY_DELAY) {
     } catch (error) {
       if (i === maxRetries - 1) throw error;
       console.log(
-        colors.yellow(`⚠️ Error occurred. Retrying... (${i + 1}/${maxRetries})`)
+        colors.yellow(`⚠️ Terjadi kesalahan. Mencoba lagi... (${i + 1}/${maxRetries})`)
       );
       await sleep(delay);
     }
@@ -36,7 +36,7 @@ const main = async () => {
   const chains = loadChains(networkType);
   const selectedChain = selectChain(chains);
 
-  console.log(colors.green(`✅ You have selected: ${selectedChain.name}`));
+  console.log(colors.green(`✅ Kamu Memilih: ${selectedChain.name}`));
   console.log(colors.green(`🛠 RPC URL: ${selectedChain.rpcUrl}`));
   console.log(colors.green(`🔗 Chain ID: ${selectedChain.chainId}`));
 
@@ -45,7 +45,7 @@ const main = async () => {
   const privateKeys = JSON.parse(fs.readFileSync('privateKeys.json'));
 
   const transactionCount = readlineSync.questionInt(
-    'Enter the number of transactions you want to send for each address: '
+    'Masukkan jumlah transaksi yang ingin Kamu kirim untuk setiap alamat: '
   );
 
   for (const privateKey of privateKeys) {
@@ -53,7 +53,7 @@ const main = async () => {
     const senderAddress = wallet.address;
 
     console.log(
-      colors.cyan(`💼 Processing transactions for address: ${senderAddress}`)
+      colors.cyan(`💼 Memproses transaksi untuk alamat: ${senderAddress}`)
     );
 
     let senderBalance;
@@ -62,7 +62,7 @@ const main = async () => {
     } catch (error) {
       console.log(
         colors.red(
-          `❌ Failed to check balance for ${senderAddress}. Skipping to next address.`
+          `❌ Gagal memeriksa saldo ${senderAddress}. Skip ke alamat berikutnya.`
         )
       );
       continue;
@@ -70,7 +70,7 @@ const main = async () => {
 
     if (senderBalance < ethers.parseUnits('0.0001', 'ether')) {
       console.log(
-        colors.red('❌ Insufficient or zero balance. Skipping to next address.')
+        colors.red('❌ Saldo tidak mencukupi atau nol. Skip ke alamat berikutnya.')
       );
       continue;
     }
@@ -92,13 +92,13 @@ const main = async () => {
           );
           if (senderBalance < ethers.parseUnits('0.0001', 'ether')) {
             console.log(
-              colors.red('❌ Insufficient balance for transactions.')
+              colors.red('❌ Saldo tidak mencukupi untuk melakukan transaksi.')
             );
             continuePrintingBalance = false;
           }
         } catch (error) {
           console.log(
-            colors.red(`❌ Failed to check balance: ${error.message}`)
+            colors.red(`❌ Gagal memeriksa saldo: ${error.message}`)
           );
         }
         await sleep(5000);
@@ -111,7 +111,7 @@ const main = async () => {
       const receiverWallet = ethers.Wallet.createRandom();
       const receiverAddress = receiverWallet.address;
       console.log(
-        colors.white(`\n🆕 Generated address ${i}: ${receiverAddress}`)
+        colors.white(`\n🆕 Menghasilkan alamat ${i}: ${receiverAddress}`)
       );
 
       const amountToSend = ethers.parseUnits(
@@ -132,7 +132,7 @@ const main = async () => {
         gasPrice = (await provider.getFeeData()).gasPrice;
       } catch (error) {
         console.log(
-          colors.red('❌ Failed to fetch gas price from the network.')
+          colors.red('❌ Gagal mengambil harga GAS dari jaringan.')
         );
         continue;
       }
@@ -150,12 +150,12 @@ const main = async () => {
         tx = await retry(() => wallet.sendTransaction(transaction));
       } catch (error) {
         console.log(
-          colors.red(`❌ Failed to send transaction: ${error.message}`)
+          colors.red(`❌ Gagal Mengirim Transaksi: ${error.message}`)
         );
         continue;
       }
 
-      console.log(colors.white(`🔗 Transaction ${i}:`));
+      console.log(colors.white(`🔗 Transaksi ${i}:`));
       console.log(colors.white(`  Hash: ${colors.green(tx.hash)}`));
       console.log(colors.white(`  From: ${colors.green(senderAddress)}`));
       console.log(colors.white(`  To: ${colors.green(receiverAddress)}`));
@@ -181,7 +181,7 @@ const main = async () => {
         receipt = await retry(() => provider.getTransactionReceipt(tx.hash));
         if (receipt) {
           if (receipt.status === 1) {
-            console.log(colors.green('✅ Transaction Success!'));
+            console.log(colors.green('✅ Transaksi Sukses!'));
             console.log(colors.green(`  Block Number: ${receipt.blockNumber}`));
             console.log(
               colors.green(`  Gas Used: ${receipt.gasUsed.toString()}`)
@@ -192,18 +192,18 @@ const main = async () => {
               )
             );
           } else {
-            console.log(colors.red('❌ Transaction FAILED'));
+            console.log(colors.red('❌ Transaksi Gagal'));
           }
         } else {
           console.log(
             colors.yellow(
-              '⏳ Transaction is still pending after multiple retries.'
+              '⏳ Transaksi Tertunda'
             )
           );
         }
       } catch (error) {
         console.log(
-          colors.red(`❌ Error checking transaction status: ${error.message}`)
+          colors.red(`❌ Gagal memeriksa status transaksi: ${error.message}`)
         );
       }
 
@@ -211,16 +211,16 @@ const main = async () => {
     }
 
     console.log(
-      colors.green(`✅ Finished transactions for address: ${senderAddress}`)
+      colors.green(`✅ Transaksi selesai untuk alamat: ${senderAddress}`)
     );
   }
 
-  console.log(colors.green('All transactions completed.'));
-  console.log(colors.green('Subscribe: https://t.me/coinbreeze_web3'));
+  console.log(colors.green('Semua transaksi telah selesai.'));
+  console.log(colors.green('Subscribe: https://t.me/https://t.me/coinbreeze_web3'));
   process.exit(0);
 };
 
 main().catch((error) => {
-  console.error(colors.red('🚨 An unexpected error occurred:'), error);
+  console.error(colors.red('🚨 Terjadi kesalahan yang tidak terduga:'), error);
   process.exit(1);
 });
