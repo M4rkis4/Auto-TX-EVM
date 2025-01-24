@@ -12,7 +12,7 @@ Konfigurasi dan Otomatisasi transaksi EVM dengan mudah menggunakan bot ini untuk
 
 ## Getting Started
 
-### Prerequisites
+### Prasyarat
 
 Pastikan telah menginstal:
 
