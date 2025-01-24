@@ -13,7 +13,7 @@ function loadChains(networkType) {
   const chains = JSON.parse(fs.readFileSync(filePath, 'utf8'));
 
   if (chains.length === 0) {
-    console.log(colors.red(`🚨 Kesalahan: Tidak ada Chain yang ditemukan ${filePath}.`));
+    console.log(colors.red(`🚨 Kesalahan: Tidak ada Jaringan yang ditemukan ${filePath}.`));
     process.exit(1);
   }
 
