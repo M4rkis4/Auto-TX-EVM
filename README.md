@@ -10,7 +10,7 @@ Konfigurasi dan Otomatisasi transaksi EVM dengan mudah menggunakan bot ini untuk
 - 🚀 Konfigurasi mudah untuk berbagai jaringan (testnet dan mainnet).
 - 🔒 Aman untuk kunci pribadi.
 
-## Getting Started
+## Panduan
 
 ### Prasyarat
 
@@ -19,7 +19,7 @@ Pastikan telah menginstal:
 - [Node.js](https://nodejs.org/) (v14 atau Lebih Tinggi)
 - npm (Node Package Manager)
 
-### Installation
+### Instalisasi
 
 1. Clone repository:
 
@@ -69,12 +69,12 @@ Pastikan telah menginstal:
 
 2. **Menentukan Kunci Pribadi**:
 
-   - Simpan kunci pribadi Kamu dengan di dalam file `privateKeys.json` di direktori root:
+   - Simpan kunci pribadi Kamu di dalam file `privateKeys.json` di direktori root:
 
      ```json
      [
          "0xKUNCI_PRIBADI_KAMU_1",
-         "0xKUNCI_PRIBADI_KAMU_1"
+         "0xKUNCI_PRIBADI_KAMU_2"
      ]
      ```
 
@@ -87,7 +87,7 @@ Pastikan telah menginstal:
      ```json
      [
          "0xALAMAT_TARGET_1",
-         "0xALAMAT_TARGET_1"
+         "0xALAMAT_TARGET_2"
      ]
      ```
 
