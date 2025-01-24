@@ -1,16 +1,16 @@
 [
   {
-    "name": "Tea Assam Testnet",
-    "rpcUrl": "https://assam-rpc.tea.xyz",
-    "chainId": "93384",
-    "symbol": "TEA",
-    "explorer": "https://explorer-tea-assam-fo46m5b966.t.conduit.xyz:443"
+    "name": "Hyperliquid EVM Testnet",
+    "rpcUrl": "https://api.hyperliquid-testnet.xyz/evm",
+    "chainId": "998",
+    "symbol": "HYPE",
+    "explorer": "https://evm.hyperstats.xyz"
   },
   {
-    "name": "Cypher Testnet",
-    "rpcUrl": "https://testnet-rpc.cypher.z1labs.ai",
-    "chainId": "10111",
-    "symbol": "DEAI",
-    "explorer": "https://testnet.cypherscan.ai"
+    "name": "Nama Testnet",
+    "rpcUrl": "https://rpc-testnet.com",
+    "chainId": "9999",
+    "symbol": "TEST",
+    "explorer": "https://testnet.com"
   }
 ]
