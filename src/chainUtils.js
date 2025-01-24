@@ -29,16 +29,16 @@ function selectNetworkType() {
   );
 
   if (selectedIndex === -1) {
-    console.log(colors.red('🚨 No network type selected. Exiting...'));
+    console.log(colors.red('🚨 Tidak ada jaringan yang dipilih. Keluar...'));
     process.exit(1);
   }
 
-  return selectedIndex === 0 ? 'testnet' : 'mainnet';
+  return selectedIndex === 0 ? 'Testnet' : 'Mainnet';
 }
 
 function selectChain(chains) {
   console.log('');
-  console.log(colors.cyan('🌐 Pilih jaringan blockchain:'));
+  console.log(colors.cyan('🌐 Pilih Jaringan:'));
 
   const chainNames = chains.map((chain) => {
     return `${chain.name}`;
@@ -46,11 +46,11 @@ function selectChain(chains) {
 
   const selectedIndex = readlineSync.keyInSelect(
     chainNames,
-    'Chain mana yang ingin Kamu gunakan?'
+    'Jaringan mana yang ingin Kamu gunakan?'
   );
 
   if (selectedIndex === -1) {
-    console.log(colors.red('🚨 Tidak ada Chain yang dipilih. Keluar...'));
+    console.log(colors.red('🚨 Tidak ada Jaringan yang dipilih. Keluar...'));
     process.exit(1);
   }
 
