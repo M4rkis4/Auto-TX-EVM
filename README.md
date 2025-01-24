@@ -112,9 +112,18 @@ Pastikan telah menginstal:
 
 Jika Kamu ingin memberikan Donasi:
 
-- **Solana**: `9shcbqb4ag1mwPoMnPi365f6qQhR52JUgovuTFK9iUfv`
-- **EVM**: `0x5ddA3d0d29ebC82a0f8baFe4091BCdA2b417C974`
-- **BTC**: `bc1q6r5qkrmtn2es37cxw02ywfnr2u5ws22u9y0m0297ah5u8d2vgexsaevtn3`
+- **Solana**:
+  ```bash
+  9shcbqb4ag1mwPoMnPi365f6qQhR52JUgovuTFK9iUfv
+  ```
+- **EVM**:
+  ```bash
+  0x5ddA3d0d29ebC82a0f8baFe4091BCdA2b417C974
+  ```
+- **BTC**:
+  ```bash
+  bc1q6r5qkrmtn2es37cxw02ywfnr2u5ws22u9y0m0297ah5u8d2vgexsaevtn3
+  ```
 
 ### Lisensi
 
