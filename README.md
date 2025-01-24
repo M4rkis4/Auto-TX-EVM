@@ -25,6 +25,8 @@ Pastikan telah menginstal:
 
    ```bash
    git clone https://github.com/M4rkis4/Auto-TX-EVM.git
+   ```
+   ```bash
    cd Auto-TX-EVM
    ```
 
